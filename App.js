@@ -1,14 +1,27 @@
 import React from 'react';
+import Axios from 'axios';
 import { StyleSheet, Text, View } from 'react-native';
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
-}
+   
 
+Axios.get('https://https://randomuser.me/api/')
+  .then(response => {
+    console.log(response.data);
+  })
+  .catch(error => {
+    console.log(error);
+  }))
+
+return(
+
+<View style={styles.container}>
+<Text>Open up App.js to start working on your app!</Text>
+</View>
+)
+}
 const styles = StyleSheet.create({
   container: {
     flex: 1,
